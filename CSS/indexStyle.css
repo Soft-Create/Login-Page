@@ -1,0 +1,56 @@
+
+		body{
+			margin:0 0 0 0;
+			padding:0;}
+			
+		#layoutTable{
+					border-collapse:collapse;
+					padding:0;
+					width:100%;}
+	
+		#loginTable{
+					margin:0 0 0 0;
+					padding:6px;
+					background-color:LightBlue;
+					border-collapse:collapse;
+					width:350px;
+					}
+					
+		.inputFields{
+					 text-align:left;
+					 padding:12px;
+		}
+		
+		input{
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			border-radius:2px;
+			}
+			  
+	    td	{ 			  
+			  padding:10px;			  
+			}
+			
+		.downList{
+				  display:table;
+				  margin:0 auto;
+				  }
+					  
+		ul { 
+			margin:0px;
+			display: block;
+			list-style-type:none;
+			padding:0px;
+			overflow:hidden;		
+			}
+			
+		li {text-align:center;
+			padding:16px;
+			float:left;
+			color:white;
+			}
+			
+		li:hover{
+				background-color:#111111;
+				display:block;
+				}

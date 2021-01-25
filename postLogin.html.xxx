@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+
+	function sendFile(oFormElement){
+		if (!oFormElement.action) { return; }
+		  var oReq = new XMLHttpRequest();
+		  //oReq.onLoad = console.log(this.responseText);
+
+		  if (oFormElement.method.toLowerCase() === "post") {
+		    oReq.open("post", oFormElement.action);
+		    oReq.send(new FormData(oFormElement));
+		    oReq.onreadystatechange=function(){
+		    	
+		    	if(this.readyState==4 && this.status==200){
+		    		if(this.responseText==1)
+		    			alert("File Uploaded Successfully.");
+		    		else if(this.responseText==0)}
+		    			aler("Possible file upload attack.");
+		    };
+		  } 
+
+		  else {
+		    var oField, sFieldType, nFile, sSearch = "";
+		    for (var nItem = 0; nItem < oFormElement.elements.length; nItem++) {
+		      oField = oFormElement.elements[nItem];
+		      if (!oField.hasAttribute("name")) { continue; }
+		      sFieldType = oField.nodeName.toUpperCase() === "INPUT" ?
+		          oField.getAttribute("type").toUpperCase() : "TEXT";
+		      if (sFieldType === "FILE") {
+		        for (nFile = 0; nFile < oField.files.length;
+		            sSearch += "&" + escape(oField.name) + "=" + escape(oField.files[nFile++].name));
+		      } else if ((sFieldType !== "RADIO" && sFieldType !== "CHECKBOX") || oField.checked) {
+		        sSearch += "&" + escape(oField.name) + "=" + escape(oField.value);
+		      }
+		    }
+		    oReq.open("get", oFormElement.action.replace(/(?:\?.*)?$/, sSearch.replace(/^&/, "?")), true);
+		    oReq.send(null);
+		  }
+		}
+</script>
+
+</head>
+
+<body>
+	<h1>Upload files</h1>
+	<!-- The data encoding type, enctype, MUST be specified as below -->
+	<form action="PHP/upload.php" method="post" enctype="multipart/form-data"onsubmit="sendFile(this);return false;">
+    <!-- MAX_FILE_SIZE must precede the file input field -->
+    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+    <!-- Name of input element determines name in $_FILES array -->
+    <input name="userfile" type="file" />
+    <input type="submit" name="save" value="Upload" />
+</form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="indexStyle.css">
+	<script type='text/javascript' src='indexScript.js'></script>
+</head>
+
+<body >
+	<!--This is the table for layout-->
+	<table id="layoutTable" cellpadding='0px' cellspacing='0px'>
+	
+		<tr><th><img src="logo_head.png" style="width:100%;height:100%;margin:0 0 0 0;padding:0"></th></tr>
+		
+		<!--The table to show login box-->
+		<tr align="center" style='padding:0;margin:0 0 0 0;'><th>
+		
+		
+		<table id="loginTable"  style="margin-top:80px;margin-bottom:80px">
+			
+			<tr>
+				<td colspan="2" style="text-align:center"><b>LOGIN...!</b></td>
+			</tr>			
+			
+			<!--INPUT FIELDS-->			
+			<tr>
+				<th class="inputFields">User ID</th>
+				<td><input id="nam" type="text" name="userId"></td>
+			</tr>
+			
+			<tr>
+				<th class="inputFields">Password</th>
+				<td><input id="pass" type="password" name="password"></td>
+			</tr>
+			
+			<!--SUBMIT AND RECOVERY-->
+			<tr>
+				<td colspan="2">
+					<table style="border-collapse:collapse">
+						<tr align="center" style="text-align:center">
+						<td><a href="forgotPassword.html">Forgot Password</a></td>
+						<!-- Login Button -->
+						<td><button id="button" onclick="login();">Login</td>
+						<td><a href="Register.html">Create Account</a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+		</table>
+		
+		</th></tr>
+		
+		<tr><th style="background-color:#222222">
+		<div class='downList'>
+			<ul>
+			<li >Copyright &copy</li>
+			<li><address>Contact : abc@gmail.com</address></li>
+			</ul>
+		</div>
+		</th></tr>
+		
+		</table>
+</body>
+
+</html>

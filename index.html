@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Sign In</title>
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/Register.css">
+	<script src="JavaScript/indexScript.js"></script>
+	<style type="text/css">
+		.form{
+			width:55%;
+			border-left: 1px solid #AAA;
+			display:block;
+			float:right;
+			padding-left: 24px;
+		}
+
+		.links{
+			float-left;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1 style="color:#ffffff;text-align:center;">Sign In</h1>
+		<div class="content">
+			<section class="form">
+			<!--Name-->
+					<label for="nam">User ID :</label><br><section id="nErr"></section>
+					<input placeholder="User ID" id="nam" name="userId">
+					<br>					
+			<!--Password-->		
+					<label for="password">Password :</label><br><section id="pErr"></section>
+					<input type="password" placeholder="Type Here" id="pass" name="password">
+					<br>
+			<!--Button-->
+					<input type="button" value="Login" onclick="login()">
+			</section>
+			<section class="links"><br>
+				<a href="Register.html" style="">Create Account</a><br><br>
+				<a href="forgotPassword.html" style="">Forgot Password</a><br>
+				<p></p>
+			</section>			
+		</div>
+	</div>
+</body>
+
+</html>

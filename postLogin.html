@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="width=device-width; initial-scale=1.0;" charset="UTF-8">
+<title>Home</title>
+<style>
+
+body{
+	margin:0;
+	padding: 0;
+}
+
+ul.menu{	
+	background-color: black;
+	margin:0px;	
+	padding:0;
+	list-style-type: none;
+	overflow:hidden;
+}
+li.menu{
+	float:left;	
+}
+
+li.menu a{
+	text-decoration:none;
+	padding:20px;	
+	display:table;
+	color:white;
+    text-align:center;   
+}
+
+li.menu a:hover{
+	background-color: white;
+	color:black;	
+}
+
+ul.subMenu{
+	background-color: black;
+	margin:0px;	
+	padding:0px;
+	list-style-type: none;
+	display:none;
+	}
+
+li.subMenu a{
+	text-decoration:none;
+	padding:20px;	
+	color:white;
+	display: inline-block;
+	
+}
+
+li.subMenu{
+	text-align: center;
+	color: black;
+	border:solid 1px black;
+}
+
+li.subMenu:hover{
+	background-color: white;	
+	
+}
+
+li.subMenu a:hover{
+	background-color: white;
+	color:black;
+	
+}
+
+/*For the submenu at depth1*/
+
+ul.subMenuD1{
+	background-color: black;
+	margin:0px;	
+	padding:0px;
+	list-style-type: none;
+	display:none;
+	}
+
+li.subMenuD1 a{
+	text-decoration:none;
+	padding:20px;	
+	color:white;
+	display: inline-block;
+	
+}
+
+li.subMenuD1{
+	text-align: center;
+	color: black;
+	border:solid 1px black;
+}
+
+li.subMenuD1:hover{
+	background-color: white;	
+	
+}
+
+li.subMenuD1 a:hover{
+	background-color: white;
+	color:black;
+	
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	function hideAllOther(c){
+		$(c).css('display','none');
+	}
+
+	function hideAll(){
+		var element=["subMenu1","subMenu2","subMenu3","subMenu4"];
+		var i;
+		for(i=0;i<element.length;i++){
+			document.getElementById(element[i]).style.display="none";
+		}
+
+	}
+	function showMenu(x){
+		document.getElementById(x).style.display="table";
+	}
+		
+	function hideMenu(x){
+		document.getElementById(x).style.display="none";
+	}
+		
+</script>
+
+</head>
+
+<body>
+
+<header onmouseleave="hideAll()" style="position: fixed; width:100%;z-index: 99;">
+	<ul class="menu">
+	<li class="menu"><a href="" onmouseover="hideAll(), showMenu('subMenu1')">W</a></li>
+	<li class="menu"><a href="" onmouseover="hideAll(), showMenu('subMenu2')">X</a></li>
+	<li class="menu"><a href="" onmouseover="hideAll(), showMenu('subMenu3')">Y</a></li>
+	<li class="menu"><a href="" onmouseover="hideAll(), showMenu('subMenu4')">Z</a></li>` 
+	</ul>
+
+	<div style="position: fixed;z-index: 99;/*important*/">
+
+	<!--Elements of First Menu-->	
+	<ul id="subMenu1" class="subMenu" onmouseleave="hideMenu('subMenu1')">
+		<li class="subMenu"><a href="">Main Account</a></li>
+		<li class="subMenu"><a href="">2</a></li>
+		<li class="subMenu"><a href="">3</a></li>
+	</ul>
+	
+
+	<!--Elements of Second Menu-->
+	<ul id="subMenu2" class="subMenu" onmouseleave="hideMenu('subMenu2')" style="margin-left: 56px;">
+		<li class="subMenu"><a href="">1</a></li>
+		<li class="subMenu"><a href="">2</a></li>
+		<li class="subMenu"><a href="">3</a></li>
+	</ul>
+
+	<!--Elements of Third Menu-->
+	<ul id="subMenu3" class="subMenu" onmouseleave="hideMenu('subMenu3')" style="margin-left: 106px;">
+		<li class="subMenu"><a href="">1</a></li>
+		<li class="subMenu"><a href="">2</a></li>
+		<li class="subMenu"><a href="">3</a></li>
+	</ul>
+
+	<!--Elements of Fourth Menu-->
+	<ul id="subMenu4" class="subMenu" onmouseleave="hideMenu('subMenu4')" style="margin-left: 160px;">
+		
+		<li class="subMenu" onmouseover="hideAllOther('.subMenuD1'), showMenu('subMenu41')">
+			<a href="">A</a>
+			<!--Sub-element-->
+			<ul id="subMenu41" class="subMenuD1" onmouseleave="hideMenu('subMenu41')"  style="position:fixed;margin-left:52px;top:80px;">
+			<li class="subMenu"><a href="">1</a></li>
+			<li class="subMenu"><a href="">2</a></li>
+			<li class="subMenu"><a href="">3</a></li>
+			</ul>
+		</li>
+		
+		<li class="subMenu" onmouseover="hideAllOther('.subMenuD1'), showMenu('subMenu42')">
+			<a href="">B</a>
+			<!--Sub-element-->
+			<ul id="subMenu42" class="subMenuD1" onmouseleave="hideMenu('subMenu42')"  style="position:fixed;margin-left:52px;top:80px;">
+			<li class="subMenu"><a href="">1</a></li>
+			<li class="subMenu"><a href="">2</a></li>
+			<li class="subMenu"><a href="">3</a></li>
+			</ul>
+		</li>
+		
+		<li class="subMenu" onmouseover="hideAllOther('.subMenuD1'), showMenu('subMenu42')">
+			<a href="">C</a>
+			<!--Sub-element-->
+			<ul id="subMenu43" class="subMenuD1" onmouseleave="hideMenu('subMenu43')"  style="position:fixed;margin-left:52px;top:80px;">
+			<li class="subMenu"><a href="">1</a></li>
+			<li class="subMenu"><a href="">2</a></li>
+			<li class="subMenu"><a href="">3</a></li>
+			</ul>
+		</li>
+		
+		<li class="subMenu" onmouseover="hideAllOther('.subMenuD1'), showMenu('subMenu44')">
+			<a href="">D</a>
+			<!--Sub-element-->
+			<ul id="subMenu44" class="subMenuD1" onmouseleave="hideMenu('subMenu44')"  style="position:fixed;margin-left:52px;top:80px;">
+			<li class="subMenu"><a href="">1</a></li>
+			<li class="subMenu"><a href="">2</a></li>
+			<li class="subMenu"><a href="">3</a></li>
+			</ul>
+		</li>
+		
+		<li class="subMenu" onmouseover="hideAllOther('.subMenuD1'), showMenu('subMenu45')">
+			<a href="">E</a>
+			<!--Sub-element-->
+			<ul id="subMenu45" class="subMenuD1" onmouseleave="hideMenu('subMenu45')"  style="position:fixed;margin-left:52px;top:80px;">
+			<li class="subMenu"><a href="">1</a></li>
+			<li class="subMenu"><a href="">2</a></li>
+			<li class="subMenu"><a href="">3</a></li>
+			</ul>
+		</li>
+
+	</ul>
+</div>
+</header>
+
+<!--The body of the Web page-->
+<section style="position:relative;z-index: 0;padding:12px; top:40px;">	
+
+	<pre style="white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */">The control system's function is as follows—note that this is a simplified description, and some of these steps may be performed concurrently or in a different order depending on the type of CPU:
+Read the code for the next instruction from the cell indicated by the program counter.
+Decode the numerical code for the instruction into a set of commands or signals for each of the other systems.
+Increment the program counter so it points to the next instruction.
+Read whatever data the instruction requires from cells in memory (or perhaps from an input device). The location of this required data is typically stored within the instruction code.
+Provide the necessary data to an ALU or register.
+If the instruction requires an ALU or specialized hardware to complete, instruct the hardware to perform the requested operation.
+Write the result from the ALU back to a memory location or to a register or perhaps an output device.
+Jump back to step (1).
+Since the program counter is (conceptually) just another set of memory cells, it can be changed by calculations done in the ALU. Adding 100 to the program counter would cause the next instruction to be read from a place 100 locations further down the program. Instructions that modify the program counter are often known as "jumps" and allow for loops (instructions that are repeated by the computer) and often conditional instruction execution (both examples of control flow).
+The sequence of operations that the control unit goes through to process an instruction is in itself like a short computer program, and indeed, in some more complex CPU designs, there is another yet smaller computer called a microsequencer, which runs a microcode program that causes all of these events to happen.
+Central processing unit (CPU)
+The control unit, ALU, and registers are collectively known as a central processing unit (CPU). Early CPUs were composed of many separate components but since the mid-1970s CPUs have typically been constructed on a single integrated circuit called a microprocessor.
+Arithmetic logic unit (ALU)
+Main article: Arithmetic logic unit
+The ALU is capable of performing two classes of operations: arithmetic and logic.[59] The set of arithmetic operations that a particular ALU supports may be limited to addition and subtraction, or might include multiplication, division, trigonometry functions such as sine, cosine, etc., and square roots. Some can only operate on whole numbers (integers) whilst others use floating point to represent real numbers, albeit with limited precision. However, any computer that is capable of performing just the simplest operations can be programmed to break down the more complex operations into simple steps that it can perform. Therefore, any computer can be programmed to perform any arithmetic operation—although it will take more time to do so if its ALU does not directly support the operation. An ALU may also compare numbers and return boolean truth values (true or false) depending on whether one is equal to, greater than or less than the other ("is 64 greater than 65?"). Logic operations involve Boolean logic: AND, OR, XOR, and NOT. These can be useful for creating complicated conditional statements and processing boolean logic.
+Superscalar computers may contain multiple ALUs, allowing them to process several instructions simultaneously.[60] Graphics processors and computers with SIMD and MIMD features often contain ALUs that can perform arithmetic on vectors and matrices.
+
+<hr>
+<h2>Definitions of Literature</h2>
+
+There have been various attempts to define "literature".[1] Simon and Delyse Ryan begin their attempt to answer the question "What is Literature?" with the observation:
+The quest to discover a definition for "literature" is a road that is much travelled, though the point of arrival, if ever reached, is seldom satisfactory. Most attempted definitions are broad and vague, and they inevitably change over time. In fact, the only thing that is certain about defining literature is that the definition will change. Concepts of what is literature change over time as well. [2]
+Definitions of literature have varied over time: it is a "culturally relative definition".[3] In Western Europe prior to the eighteenth century, literature denoted all books and writing.[3] A more restricted sense of the term emerged during the Romantic period, in which it began to demarcate "imaginative" writing.[4][5] Contemporary debates over what constitutes literature can be seen as returning to older, more inclusive notions; Cultural studies, for instance, takes as its subject of analysis both popular and minority genres, in addition to canonical works.
+The value judgment definition of literature considers it to cover exclusively those writings that possess high quality or distinction, forming part of the so-called belles-lettres ('fine writing') tradition.[6] This sort of definition is that used in the Encyclopædia Britannica Eleventh Edition (1910–11) when it classifies literature as "the best expression of the best thought reduced to writing."[7] Problematic in this view is that there is no objective definition of what constitutes "literature": anything can be literature, and anything which is universally regarded as literature has the potential to be excluded, since value judgments can change over time.[6]
+The formalist definition is that "literature" foregrounds poetic effects; it is the "literariness" or "poetic" of literature that distinguishes it from ordinary speech or other kinds of writing (e.g., journalism).[8][9] Jim Meyer considers this a useful characteristic in explaining the use of the term to mean published material in a particular field (e.g., "scientific literature"), as such writing must use language according to particular standards.[1] The problem with the formalist definition is that in order to say that literature deviates from ordinary uses of language, those uses must first be identified; this is difficult because "ordinary language" is an unstable category, differing according to social categories and across history.[10]
+Etymologically, the term derives from Latin literatura/litteratura "learning, a writing, grammar," originally "writing formed with letters," from litera/littera "letter".[11] In spite of this, the term has also been applied to spoken or sung texts.[1][12]</pre>
+
+</section>	
+
+<footer style="display: block;bottom:0; position: relative; background-color: black;overflow: hidden;">
+<p style="color: white;text-align: center;"> Footer</p>
+</footer>
+
+</body>
+</html>

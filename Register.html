@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Sign Up</title>
+	<meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/Register.css">
+	<script type="text/javascript" src="JavaScript/Register.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1 style="color:#ffffff;text-align:center;">Sign Up</h1>
+		<div class="content">
+			
+			<!--Name-->
+					<label for="fname">First Name :</label>
+					<label for="lname" style="margin-left:104px">Last Name :</label><br><section id="nErr"></section>
+					<input placeholder="First Name" id="fname" name="Fname">
+					<input placeholder="Last Name" id="lname" name="Lname" style="position:absolute;">				
+			<!--Email-->		
+					<br>
+					<label for="email">Email :</label><br><section id="eErr"></section>			
+					<input placeholder="someone@example.com" id="email" name="Email">
+					<br>
+			<!--Password-->		
+					<label for="password">Password :</label><br><section id="pErr"></section>
+					<input type="password" placeholder="Type Here" id="password" name="Password">
+					<br>
+					<label for="cpassword">Confirm Password :</label><br><section id="cpErr"></section>
+					<input type="password"placeholder="Type Here" id="cpassword" name="CPassword">
+					<br>
+			<!--Button-->
+					<input type="button" value="Create Account" onclick="validateForm();">			
+		</div>
+	</div>
+
+</body>
+
+</html>
